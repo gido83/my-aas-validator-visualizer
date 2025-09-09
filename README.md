@@ -1,4 +1,4 @@
-AASX Validator
+**AASX Validator**
 The AASX Validator is a web application designed to validate .aasx files (Asset Administration Shell) against official schemas. It unpacks the files to extract XML and JSON models, validates them against the Industrie 4.0 specifications, and, if both are valid, adds the model to a local browser database and an API server container. The application features a "Visualizer" tab with an expandable tree view of validated models, and deleting a model from the interface triggers its removal via the API server.
 Prerequisites
 Before running this application, ensure the following are set up:
@@ -9,7 +9,6 @@ AASX Server Container: The API server from the eclipse-aaspe/server repository m
 Setting Up the AASX Server
 
 Clone the server repository:
-**```
 git clone https://github.com/eclipse-aaspe/server.git
 cd server
 
@@ -18,7 +17,6 @@ Use a public Docker image available on Docker Hub:
 
 Recommended image: adminshellio/aasx-server-blazor-for-demo:latest.
 Run the container with the following command:
-**```
 docker run -d -p 5001:5001 --restart unless-stopped -v ./aasxs:/AasxServerBlazor/aasxs adminshellio/aasx-server-blazor-for-demo:latest
 
 
@@ -30,7 +28,6 @@ Verify the server is running at http://localhost:5001.
 Installation and Running
 
 Clone the Repository:
-**```
 git clone https://github.com/MiguelReisRepo/aasx-validator-with-api.git
 cd aasx-validator-with-api
 
@@ -39,7 +36,6 @@ Set Up Docker Compose:
 
 Edit the included docker-compose.yml file and ensure the NEXT_PUBLIC_AASX_API_URL environment variable points to your AASX server (e.g., http://aasx-server:5001).
 Start the services:
-**```
 docker compose up -d
 
 
