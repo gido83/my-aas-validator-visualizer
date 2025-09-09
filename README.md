@@ -11,7 +11,8 @@ Before running this application, ensure the following are set up:
 
 ## Setting Up the AASX Server
 
-1. Clone the server repository:
+Clone the server repository:
+
    git clone https://github.com/eclipse-aaspe/server.git
    cd server
 Use a public Docker image available on Docker Hub:
