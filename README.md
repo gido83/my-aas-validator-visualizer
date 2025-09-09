@@ -9,14 +9,18 @@ AASX Server Container: The API server from the eclipse-aaspe/server repository m
 Setting Up the AASX Server
 
 Clone the server repository:
-textgit clone https://github.com/eclipse-aaspe/server.git
+**```
+git clone https://github.com/eclipse-aaspe/server.git
 cd server
+
 
 Use a public Docker image available on Docker Hub:
 
 Recommended image: adminshellio/aasx-server-blazor-for-demo:latest.
 Run the container with the following command:
-textdocker run -d -p 5001:5001 --restart unless-stopped -v ./aasxs:/AasxServerBlazor/aasxs adminshellio/aasx-server-blazor-for-demo:latest
+**```
+docker run -d -p 5001:5001 --restart unless-stopped -v ./aasxs:/AasxServerBlazor/aasxs adminshellio/aasx-server-blazor-for-demo:latest
+
 
 Ensure the ./aasxs directory exists locally to store AASX files.
 
@@ -26,14 +30,18 @@ Verify the server is running at http://localhost:5001.
 Installation and Running
 
 Clone the Repository:
-textgit clone https://github.com/your-username/aasx-validator-test.git
-cd aasx-validator-test
+**```
+git clone https://github.com/MiguelReisRepo/aasx-validator-with-api
+cd aasx-validator-with-api
+
 
 Set Up Docker Compose:
 
 Edit the included docker-compose.yml file and ensure the NEXT_PUBLIC_AASX_API_URL environment variable points to your AASX server (e.g., http://aasx-server:5001).
 Start the services:
-textdocker compose up -d
+**```
+docker compose up -d
+
 
 
 
@@ -58,3 +66,5 @@ Utilizes the API server from eclipse-aaspe/server for storage and synchronizatio
 
 Contributing
 Feel free to open issues or pull requests on GitHub for enhancements or bug reports.
+License
+[Add your preferred license, e.g., MIT or Apache 2.0, or specify if it’s proprietary.]
