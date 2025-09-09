@@ -56,6 +56,7 @@ If any of models don't pass validation, you can clearly see what's not valid and
 
 Visualization: Use the "Visualizer" tab to view an expandable tree structure of validated models.
 <img src="docs/screenshots/aasx-visualizer-with-model.png" alt="AASX visualizer with valid model">
+<img src="docs/screenshots/aasx-server-with-model.png" alt="AASX Server with valid model">
 
 Deletion: Removing a model from the interface triggers a deletion request to the AASX server via its API.
 
