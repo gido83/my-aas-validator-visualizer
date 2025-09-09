@@ -12,8 +12,6 @@ Before running this application, ensure the following are set up:
 ## Setting Up the AASX Server
 
 1. Clone the server repository:
-
-   ```bash
    git clone https://github.com/eclipse-aaspe/server.git
    cd server
 Use a public Docker image available on Docker Hub:
@@ -22,27 +20,19 @@ Recommended image: adminshellio/aasx-server-blazor-for-demo:latest.
 
 Run the container with the following command:
 
-bash
-Copy code
 docker run -d -p 5001:5001 --restart unless-stopped -v ./aasxs:/AasxServerBlazor/aasxs adminshellio/aasx-server-blazor-for-demo:latest
 Ensure the ./aasxs directory exists locally to store AASX files.
 
-Verify the server is running at http://localhost:5001.
+Check if the server is running at http://localhost:5001.
 
 ## Installation and Running
 Clone the Repository:
-
-bash
-Copy code
 git clone https://github.com/MiguelReisRepo/aasx-validator-with-api.git
 cd aasx-validator-with-api
 Set Up Docker Compose
 Edit the included docker-compose.yml file and ensure the NEXT_PUBLIC_AASX_API_URL environment variable points to your AASX server (e.g., http://aasx-server:5001).
 
 ## Start the services:
-
-bash
-Copy code
 docker compose up -d
 Access the Application
 Open your browser at http://localhost:3000.
