@@ -1,4 +1,5 @@
 **AASX Validator**
+
 The AASX Validator is a web application designed to validate .aasx files (Asset Administration Shell) against official schemas. It unpacks the files to extract XML and JSON models, validates them against the Industrie 4.0 specifications, and, if both are valid, adds the model to a local browser database and an API server container. The application features a "Visualizer" tab with an expandable tree view of validated models, and deleting a model from the interface triggers its removal via the API server.
 Prerequisites
 Before running this application, ensure the following are set up:
