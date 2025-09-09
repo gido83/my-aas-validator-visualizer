@@ -29,7 +29,7 @@ Ensure the ./aasxs directory exists locally to store AASX files.
 
 Verify the server is running at http://localhost:5001.
 
-Installation and Running
+## Installation and Running
 Clone the Repository:
 
 bash
@@ -39,7 +39,7 @@ cd aasx-validator-with-api
 Set Up Docker Compose
 Edit the included docker-compose.yml file and ensure the NEXT_PUBLIC_AASX_API_URL environment variable points to your AASX server (e.g., http://aasx-server:5001).
 
-Start the services:
+## Start the services:
 
 bash
 Copy code
@@ -49,7 +49,7 @@ Open your browser at http://localhost:3000.
 
 The application will be available under the "Validator" tab (for file validation) and "Visualizer" tab (to view stored models).
 
-How It Works
+## How It Works
 Validation: Drag and drop a .aasx file into the "Validator" tab. The application unpacks it, extracts the XML and JSON models, and validates them against official schemas from admin-shell-io/schema-validation.
 
 Storage: If both models pass validation, the file is added to the local browser database and sent to the running AASX server.
@@ -58,10 +58,10 @@ Visualization: Use the "Visualizer" tab to view an expandable tree structure of 
 
 Deletion: Removing a model from the interface triggers a deletion request to the AASX server via its API.
 
-Dependencies
+## Dependencies
 Validation: Relies on schemas from admin-shell-io/schema-validation.
 
 Storage: Utilizes the API server from eclipse-aaspe/server for storage and synchronization.
 
-Contributing
+## Contributing
 Feel free to open issues or pull requests on GitHub for enhancements or bug reports.
