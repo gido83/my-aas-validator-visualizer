@@ -31,7 +31,7 @@ Installation and Running
 
 Clone the Repository:
 **```
-git clone https://github.com/MiguelReisRepo/aasx-validator-with-api
+git clone https://github.com/MiguelReisRepo/aasx-validator-with-api.git
 cd aasx-validator-with-api
 
 
@@ -66,5 +66,3 @@ Utilizes the API server from eclipse-aaspe/server for storage and synchronizatio
 
 Contributing
 Feel free to open issues or pull requests on GitHub for enhancements or bug reports.
-License
-[Add your preferred license, e.g., MIT or Apache 2.0, or specify if it’s proprietary.]
