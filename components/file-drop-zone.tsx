@@ -101,10 +101,10 @@ export function FileDropZone({ onFileSelect, isProcessing, className }: FileDrop
 
         <div className="flex flex-col items-center gap-4">
           {isProcessing ? (
-            <div className="w-12 h-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
+            <div className="w-12 h-12 animate-spin rounded-full border-4 border-primary border-t-transparent" />
           ) : (
-            <div className="p-3 bg-blue-100 dark:bg-blue-900/20 rounded-full">
-              <Upload className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div className="p-3 bg-primary/10 rounded-full">
+              <Upload className="w-8 h-8 text-primary dark:text-blue-400" />
             </div>
           )}
 

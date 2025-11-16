@@ -96,14 +96,14 @@ export default function AASXValidatorPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gray-250 dark:bg-gray-900">
       <div className="max-w-8xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="p-3 bg-blue-500 rounded-full shadow-lg">
+            <div className="p-3 bg-primary rounded-full shadow-lg">
               <Shield className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold text-primary dark:text-blue-400">
               AASX Validator
             </h1>
           </div>
@@ -132,8 +132,8 @@ export default function AASXValidatorPage() {
             onClick={() => setViewMode("validator")}
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
               viewMode === "validator"
-                ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
-                : "border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/20"
+                ? "bg-primary hover:bg-primary/90 text-white shadow-lg"
+                : "border-primary/20 text-primary hover:bg-primary/5 dark:border-primary/50 dark:text-primary dark:hover:bg-primary/10"
             }`}
           >
             <Upload className="w-4 h-4" />
@@ -144,8 +144,8 @@ export default function AASXValidatorPage() {
             onClick={() => setViewMode("list")}
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
               viewMode === "list" || viewMode === "tree"
-                ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg"
-                : "border-indigo-200 text-indigo-600 hover:bg-indigo-50 dark:border-indigo-800 dark:text-indigo-400 dark:hover:bg-indigo-900/20"
+                ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+                : "border-primary/20 text-primary hover:bg-primary/5 dark:border-primary/50 dark:text-primary dark:hover:bg-primary/10"
             }`}
           >
             <Database className="w-4 h-4" />
@@ -181,8 +181,8 @@ export default function AASXValidatorPage() {
 
         {viewMode === "list" && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[600px]">
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-blue-200 dark:border-gray-700 overflow-hidden shadow-lg">
-              <div className="p-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-primary/20 dark:border-gray-700 overflow-hidden shadow-lg">
+              <div className="p-4 bg-primary text-primary-foreground">
                 <h3 className="font-semibold">Stored AASX Models</h3>
               </div>
               <div className="overflow-y-auto h-full">
@@ -190,8 +190,8 @@ export default function AASXValidatorPage() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-indigo-200 dark:border-gray-700 overflow-hidden shadow-lg">
-              <div className="p-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+            <div className="bg-white dark:bg-gray-800 rounded-xl border border-primary/20 dark:border-gray-700 overflow-hidden shadow-lg">
+              <div className="p-4 bg-primary text-primary-foreground">
                 <h3 className="font-semibold">
                   {selectedFile ? selectedFile.fileName : "Select a file to view details"}
                 </h3>
@@ -218,7 +218,7 @@ export default function AASXValidatorPage() {
               <Button
                 variant="outline"
                 onClick={handleBackToList}
-                className="flex items-center gap-2 border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/20 bg-transparent"
+                className="flex items-center gap-2 border-primary/20 text-primary hover:bg-primary/5 dark:border-primary/50 dark:text-primary dark:hover:bg-primary/10 bg-transparent"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to List
@@ -229,7 +229,7 @@ export default function AASXValidatorPage() {
         )}
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-blue-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
+        <footer className="mt-16 pt-8 border-t border-primary/20 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
           <p>Built for validating Asset Administration Shell files according to the official specifications.</p>
         </footer>
       </div>
