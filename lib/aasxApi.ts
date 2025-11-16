@@ -24,9 +24,6 @@ function encodePackageId(id: string): string {
 
 const FALLBACK_URLS = [
   process.env.NEXT_PUBLIC_AASX_API_URL || "http://localhost:5001",
-  "http://127.0.0.1:5001", // Alternative localhost
-  "http://0.0.0.0:5001", // Container binding
-  "http://host.docker.internal:5001", // Docker Desktop
 ]
 
 async function findWorkingApiUrl(): Promise<string> {
@@ -36,7 +33,7 @@ async function findWorkingApiUrl(): Promise<string> {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout for health check
 
-      const response = await fetch(`${url}/health`, {
+      const response = await fetch(`${url}/workflowMangr/health`, {
         method: "GET",
         signal: controller.signal,
       })
@@ -49,29 +46,6 @@ async function findWorkingApiUrl(): Promise<string> {
       }
     } catch (error) {
       console.log(`[v0] API not reachable at: ${url}`)
-      continue
-    }
-  }
-
-  // If no health endpoint works, try the main endpoint
-  for (const url of FALLBACK_URLS) {
-    try {
-      console.log(`[v0] Testing main endpoint: ${url}/packages`)
-      const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 3000)
-
-      // Try a HEAD request to avoid sending data
-      const response = await fetch(`${url}/packages`, {
-        method: "HEAD",
-        signal: controller.signal,
-      })
-
-      clearTimeout(timeoutId)
-
-      // Even if it returns an error, if we get a response, the server is reachable
-      console.log(`[v0] Server responded at: ${url} (status: ${response.status})`)
-      return url
-    } catch (error) {
       continue
     }
   }
@@ -93,13 +67,13 @@ export async function createAASX(file: File): Promise<any> {
     throw error
   }
 
-  console.log("[v0] Using API URL:", `${apiUrl}/packages`)
+  console.log("[v0] Using API URL:", `${apiUrl}/workflowMangr/package`)
 
   try {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout
 
-    const response = await fetch(`${apiUrl}/packages`, {
+    const response = await fetch(`${apiUrl}/workflowMangr/package`, {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -158,7 +132,7 @@ export async function deleteAASX(packageId: string): Promise<void> {
     const encodedId = encodePackageId(packageId)
     console.log(`[v0] Original ID: "${packageId}" -> Encoded ID: "${encodedId}"`)
 
-    const url = `${apiUrl}/packages/${encodedId}`
+    const url = `{url}/workflowMangr/package/${encodedId}`
     console.log(`[v0] DELETE URL: ${url}`)
 
     const controller = new AbortController()
