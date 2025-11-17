@@ -30,3 +30,4 @@ echo Agent pid 74923;"
 eval "SSH_AUTH_SOCK=/var/folders/6f/bb3lv14d5q98_wnfpd5n2mrw0000gp/T//ssh-0116ZiphLzKm/agent.74924; export SSH_AUTH_SOCK;
 SSH_AGENT_PID=74925; export SSH_AGENT_PID;
 echo Agent pid 74925;".pub
+.env
